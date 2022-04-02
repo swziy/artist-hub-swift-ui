@@ -1,10 +1,3 @@
-//
-//  ArtistHubApp.swift
-//  ArtistHub
-//
-//  Created by Szymon Witkowski on 02/04/2022.
-//
-
 import SwiftUI
 
 @main

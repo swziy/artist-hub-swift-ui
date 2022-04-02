@@ -1,10 +1,3 @@
-//
-//  ArtistHubTests.swift
-//  ArtistHubTests
-//
-//  Created by Szymon Witkowski on 02/04/2022.
-//
-
 import XCTest
 @testable import ArtistHub
 
