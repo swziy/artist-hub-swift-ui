@@ -29,9 +29,9 @@ struct ArtistHubApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ListView(
+            ArtistListView(
                 store: Store(
-                    initialState: AppState(),
+                    initialState: mockAppState,
                     reducer: appReducer,
                     environment: AppEnvironment()
                 )
