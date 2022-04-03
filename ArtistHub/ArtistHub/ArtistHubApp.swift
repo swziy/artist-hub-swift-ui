@@ -1,7 +1,8 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct AppState {
+struct AppState: Equatable {
+    var artists: [Artist] = []
 
 }
 
