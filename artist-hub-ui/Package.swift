@@ -22,7 +22,7 @@ let package = Package(
             name: "ArtistHubUI",
             dependencies: [],
             resources: [
-                .process("Res")
+                .process("Resources")
             ]),
         .testTarget(
             name: "ArtistHubUITests",
