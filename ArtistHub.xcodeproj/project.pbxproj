@@ -31,16 +31,10 @@
 			remoteGlobalIDString = 3EDD2C8027F8AEDF008629C1;
 			remoteInfo = ArtistHub;
 		};
-		3EDD2C9C27F8AEE1008629C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EDD2C7927F8AEDF008629C1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3EDD2C8027F8AEDF008629C1;
-			remoteInfo = ArtistHub;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E3089D927FE2B6200035C50 /* artist-hub-core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-core"; sourceTree = "<group>"; };
 		3E49374027FE29C300B15992 /* ArtistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		3E49374127FE29C300B15992 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceConfigurator.swift; sourceTree = "<group>"; };
@@ -49,14 +43,12 @@
 		3E49374527FE29C300B15992 /* ArtistEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistEntryView.swift; sourceTree = "<group>"; };
 		3E49374627FE29C300B15992 /* UIFont+Traits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Traits.swift"; sourceTree = "<group>"; };
 		3E49374727FE29C300B15992 /* UIImage+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Custom.swift"; sourceTree = "<group>"; };
-		3E49375027FE29E300B15992 /* artist-hub-core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "artist-hub-core"; path = "../artist-hub-core"; sourceTree = "<group>"; };
 		3EDD2C8127F8AEDF008629C1 /* ArtistHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDD2C8427F8AEDF008629C1 /* ArtistHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistHubApp.swift; sourceTree = "<group>"; };
 		3EDD2C8827F8AEE0008629C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EDD2C8B27F8AEE0008629C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3EDD2C9127F8AEE1008629C1 /* ArtistHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtistHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDD2C9527F8AEE1008629C1 /* ArtistHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistHubTests.swift; sourceTree = "<group>"; };
-		3EDD2C9B27F8AEE1008629C1 /* ArtistHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArtistHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +68,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3EDD2C9827F8AEE1008629C1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,7 +81,7 @@
 		3EDD2C7827F8AEDF008629C1 = {
 			isa = PBXGroup;
 			children = (
-				3E49375027FE29E300B15992 /* artist-hub-core */,
+				3E3089D927FE2B6200035C50 /* artist-hub-core */,
 				3EDD2C8327F8AEDF008629C1 /* ArtistHub */,
 				3EDD2C9427F8AEE1008629C1 /* ArtistHubTests */,
 				3EDD2C8227F8AEDF008629C1 /* Products */,
@@ -109,7 +94,6 @@
 			children = (
 				3EDD2C8127F8AEDF008629C1 /* ArtistHub.app */,
 				3EDD2C9127F8AEE1008629C1 /* ArtistHubTests.xctest */,
-				3EDD2C9B27F8AEE1008629C1 /* ArtistHubUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,24 +174,6 @@
 			productReference = 3EDD2C9127F8AEE1008629C1 /* ArtistHubTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3EDD2C9A27F8AEE1008629C1 /* ArtistHubUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3EDD2CAB27F8AEE1008629C1 /* Build configuration list for PBXNativeTarget "ArtistHubUITests" */;
-			buildPhases = (
-				3EDD2C9727F8AEE1008629C1 /* Sources */,
-				3EDD2C9827F8AEE1008629C1 /* Frameworks */,
-				3EDD2C9927F8AEE1008629C1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3EDD2C9D27F8AEE1008629C1 /* PBXTargetDependency */,
-			);
-			name = ArtistHubUITests;
-			productName = ArtistHubUITests;
-			productReference = 3EDD2C9B27F8AEE1008629C1 /* ArtistHubUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -222,10 +188,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					3EDD2C9027F8AEE1008629C1 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 3EDD2C8027F8AEDF008629C1;
-					};
-					3EDD2C9A27F8AEE1008629C1 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 3EDD2C8027F8AEDF008629C1;
 					};
@@ -249,7 +211,6 @@
 			targets = (
 				3EDD2C8027F8AEDF008629C1 /* ArtistHub */,
 				3EDD2C9027F8AEE1008629C1 /* ArtistHubTests */,
-				3EDD2C9A27F8AEE1008629C1 /* ArtistHubUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,13 +226,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3EDD2C8F27F8AEE1008629C1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3EDD2C9927F8AEE1008629C1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,13 +259,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3EDD2C9727F8AEE1008629C1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -319,11 +266,6 @@
 			isa = PBXTargetDependency;
 			target = 3EDD2C8027F8AEDF008629C1 /* ArtistHub */;
 			targetProxy = 3EDD2C9227F8AEE1008629C1 /* PBXContainerItemProxy */;
-		};
-		3EDD2C9D27F8AEE1008629C1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3EDD2C8027F8AEDF008629C1 /* ArtistHub */;
-			targetProxy = 3EDD2C9C27F8AEE1008629C1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -542,42 +484,6 @@
 			};
 			name = Release;
 		};
-		3EDD2CAC27F8AEE1008629C1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CPFPRP3P33;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swziy.swift-ui.ArtistHubUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ArtistHub;
-			};
-			name = Debug;
-		};
-		3EDD2CAD27F8AEE1008629C1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CPFPRP3P33;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.swziy.swift-ui.ArtistHubUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ArtistHub;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -604,15 +510,6 @@
 			buildConfigurations = (
 				3EDD2CA927F8AEE1008629C1 /* Debug */,
 				3EDD2CAA27F8AEE1008629C1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3EDD2CAB27F8AEE1008629C1 /* Build configuration list for PBXNativeTarget "ArtistHubUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3EDD2CAC27F8AEE1008629C1 /* Debug */,
-				3EDD2CAD27F8AEE1008629C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
