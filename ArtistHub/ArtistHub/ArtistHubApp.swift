@@ -1,5 +1,6 @@
 import ComposableArchitecture
 import SwiftUI
+import ArtistHubCore
 
 struct AppState: Equatable {
     var artists: [Artist] = []
@@ -25,6 +26,7 @@ struct ArtistHubApp: App {
 
     init() {
         NavigationBarAppearanceConfigurator().configure()
+        print(ArtistHubCore().text)
     }
 
     var body: some Scene {
