@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E3089DC27FE2DF000035C50 /* ArtistHubUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3E3089DB27FE2DF000035C50 /* ArtistHubUI */; };
 		3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374027FE29C300B15992 /* ArtistListView.swift */; };
 		3E49374927FE29C300B15992 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374127FE29C300B15992 /* UIColor+Custom.swift */; };
 		3E49374A27FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		3E3089D927FE2B6200035C50 /* artist-hub-core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-core"; sourceTree = "<group>"; };
+		3E3089DA27FE2C5300035C50 /* artist-hub-ui */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-ui"; sourceTree = "<group>"; };
 		3E49374027FE29C300B15992 /* ArtistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		3E49374127FE29C300B15992 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceConfigurator.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E3089DC27FE2DF000035C50 /* ArtistHubUI in Frameworks */,
 				3E49375627FE2A1E00B15992 /* ArtistHubCore in Frameworks */,
 				3E49375327FE2A0B00B15992 /* ComposableArchitecture in Frameworks */,
 			);
@@ -81,6 +84,7 @@
 		3EDD2C7827F8AEDF008629C1 = {
 			isa = PBXGroup;
 			children = (
+				3E3089DA27FE2C5300035C50 /* artist-hub-ui */,
 				3E3089D927FE2B6200035C50 /* artist-hub-core */,
 				3EDD2C8327F8AEDF008629C1 /* ArtistHub */,
 				3EDD2C9427F8AEE1008629C1 /* ArtistHubTests */,
@@ -151,6 +155,7 @@
 			packageProductDependencies = (
 				3E49375227FE2A0B00B15992 /* ComposableArchitecture */,
 				3E49375527FE2A1E00B15992 /* ArtistHubCore */,
+				3E3089DB27FE2DF000035C50 /* ArtistHubUI */,
 			);
 			productName = ArtistHub;
 			productReference = 3EDD2C8127F8AEDF008629C1 /* ArtistHub.app */;
@@ -528,6 +533,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3E3089DB27FE2DF000035C50 /* ArtistHubUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ArtistHubUI;
+		};
 		3E49375227FE2A0B00B15992 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3E49375127FE2A0B00B15992 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
