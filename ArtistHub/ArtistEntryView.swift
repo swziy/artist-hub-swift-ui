@@ -1,4 +1,5 @@
 import SwiftUI
+import ArtistHubUI
 
 struct ArtistEntryView: View {
     let artist: Artist
@@ -17,11 +18,11 @@ struct ArtistEntryView: View {
                         .font(Font.system(size: 16.0, weight: .bold))
                     HStack {
                         Text(artist.username)
-                            .foregroundColor(Color(UIColor.Fill.gray))
+                            .foregroundColor(Color.Fill.gray)
                             .font(Font.system(size: 12.0, weight: .light).italic())
                         Spacer()
                         Text(artist.date)
-                            .foregroundColor(Color(UIColor.Fill.gray))
+                            .foregroundColor(Color.Fill.gray)
                             .font(Font.system(size: 12.0, weight: .light).italic())
                     }
                 }
@@ -31,7 +32,7 @@ struct ArtistEntryView: View {
                 .font(.system(size: 14, weight: .regular))
             HStack {
                 Text(artist.followers)
-                    .foregroundColor(Color(UIColor.Fill.gray))
+                    .foregroundColor(Color.Fill.gray)
                     .font(Font.system(size: 12.0, weight: .light).italic())
                 Spacer()
                 Button(action: { }) {

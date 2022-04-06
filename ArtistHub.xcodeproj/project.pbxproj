@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		3E3089DC27FE2DF000035C50 /* ArtistHubUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3E3089DB27FE2DF000035C50 /* ArtistHubUI */; };
 		3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374027FE29C300B15992 /* ArtistListView.swift */; };
-		3E49374927FE29C300B15992 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374127FE29C300B15992 /* UIColor+Custom.swift */; };
 		3E49374A27FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */; };
 		3E49374B27FE29C300B15992 /* Artist+Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374327FE29C300B15992 /* Artist+Copy.swift */; };
 		3E49374C27FE29C300B15992 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374427FE29C300B15992 /* Artist.swift */; };
 		3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374527FE29C300B15992 /* ArtistEntryView.swift */; };
-		3E49374E27FE29C300B15992 /* UIFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374627FE29C300B15992 /* UIFont+Traits.swift */; };
 		3E49374F27FE29C300B15992 /* UIImage+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374727FE29C300B15992 /* UIImage+Custom.swift */; };
 		3E49375327FE2A0B00B15992 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3E49375227FE2A0B00B15992 /* ComposableArchitecture */; };
 		3E49375627FE2A1E00B15992 /* ArtistHubCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3E49375527FE2A1E00B15992 /* ArtistHubCore */; };
@@ -38,12 +36,10 @@
 		3E3089D927FE2B6200035C50 /* artist-hub-core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-core"; sourceTree = "<group>"; };
 		3E3089DA27FE2C5300035C50 /* artist-hub-ui */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-ui"; sourceTree = "<group>"; };
 		3E49374027FE29C300B15992 /* ArtistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
-		3E49374127FE29C300B15992 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceConfigurator.swift; sourceTree = "<group>"; };
 		3E49374327FE29C300B15992 /* Artist+Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Artist+Copy.swift"; sourceTree = "<group>"; };
 		3E49374427FE29C300B15992 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		3E49374527FE29C300B15992 /* ArtistEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistEntryView.swift; sourceTree = "<group>"; };
-		3E49374627FE29C300B15992 /* UIFont+Traits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Traits.swift"; sourceTree = "<group>"; };
 		3E49374727FE29C300B15992 /* UIImage+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Custom.swift"; sourceTree = "<group>"; };
 		3EDD2C8127F8AEDF008629C1 /* ArtistHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EDD2C8427F8AEDF008629C1 /* ArtistHubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistHubApp.swift; sourceTree = "<group>"; };
@@ -110,8 +106,6 @@
 				3E49374527FE29C300B15992 /* ArtistEntryView.swift */,
 				3E49374027FE29C300B15992 /* ArtistListView.swift */,
 				3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */,
-				3E49374127FE29C300B15992 /* UIColor+Custom.swift */,
-				3E49374627FE29C300B15992 /* UIFont+Traits.swift */,
 				3E49374727FE29C300B15992 /* UIImage+Custom.swift */,
 				3EDD2C8427F8AEDF008629C1 /* ArtistHubApp.swift */,
 				3EDD2C8827F8AEE0008629C1 /* Assets.xcassets */,
@@ -249,8 +243,6 @@
 				3E49374F27FE29C300B15992 /* UIImage+Custom.swift in Sources */,
 				3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */,
 				3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */,
-				3E49374927FE29C300B15992 /* UIColor+Custom.swift in Sources */,
-				3E49374E27FE29C300B15992 /* UIFont+Traits.swift in Sources */,
 				3EDD2C8527F8AEDF008629C1 /* ArtistHubApp.swift in Sources */,
 				3E49374C27FE29C300B15992 /* Artist.swift in Sources */,
 			);

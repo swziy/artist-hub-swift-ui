@@ -1,4 +1,6 @@
 import UIKit
+import SwiftUI
+import ArtistHubUI
 
 public protocol NavigationBarAppearanceConfiguratorType {
     func configure()
@@ -22,7 +24,7 @@ public struct NavigationBarAppearanceConfigurator: NavigationBarAppearanceConfig
 
     private func appearanceForStandardNavigationBar() -> UINavigationBarAppearance {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor.Fill.accent
+        appearance.backgroundColor = UIColor(Color.Fill.accent)
         titleAttributes(for: appearance)
 
         return appearance
@@ -31,7 +33,7 @@ public struct NavigationBarAppearanceConfigurator: NavigationBarAppearanceConfig
     private func appearanceForLargeNavigationBar() -> UINavigationBarAppearance {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = UIColor.Fill.lightGray
+        appearance.backgroundColor = UIColor(Color.Fill.lightGray)
         titleAttributes(for: appearance)
 
         return appearance

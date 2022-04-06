@@ -11,7 +11,7 @@ struct ArtistListView: View {
                     ForEach(viewStore.artists) { artist in
                         ArtistEntryView(artist: artist)
                             .listRowSeparator(.hidden)
-                            .listRowBackground(Color(uiColor: UIColor.Fill.lightGray))
+                            .listRowBackground(Color.Fill.lightGray)
                             .listRowInsets(
                                 .init(
                                     top: 10.0,
@@ -24,7 +24,7 @@ struct ArtistListView: View {
                 .listStyle(PlainListStyle())
             }
             .navigationBarTitle("Artist Hub")
-            .background(Color(uiColor: UIColor.Fill.lightGray))
+            .background(Color.Fill.lightGray)
         }
     }
 }
