@@ -11,7 +11,6 @@
 		3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374027FE29C300B15992 /* ArtistListView.swift */; };
 		3E49374A27FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */; };
 		3E49374B27FE29C300B15992 /* Artist+Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374327FE29C300B15992 /* Artist+Copy.swift */; };
-		3E49374C27FE29C300B15992 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374427FE29C300B15992 /* Artist.swift */; };
 		3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374527FE29C300B15992 /* ArtistEntryView.swift */; };
 		3E49374F27FE29C300B15992 /* UIImage+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374727FE29C300B15992 /* UIImage+Custom.swift */; };
 		3E49375327FE2A0B00B15992 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3E49375227FE2A0B00B15992 /* ComposableArchitecture */; };
@@ -38,7 +37,6 @@
 		3E49374027FE29C300B15992 /* ArtistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceConfigurator.swift; sourceTree = "<group>"; };
 		3E49374327FE29C300B15992 /* Artist+Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Artist+Copy.swift"; sourceTree = "<group>"; };
-		3E49374427FE29C300B15992 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		3E49374527FE29C300B15992 /* ArtistEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistEntryView.swift; sourceTree = "<group>"; };
 		3E49374727FE29C300B15992 /* UIImage+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Custom.swift"; sourceTree = "<group>"; };
 		3EDD2C8127F8AEDF008629C1 /* ArtistHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +99,6 @@
 		3EDD2C8327F8AEDF008629C1 /* ArtistHub */ = {
 			isa = PBXGroup;
 			children = (
-				3E49374427FE29C300B15992 /* Artist.swift */,
 				3E49374327FE29C300B15992 /* Artist+Copy.swift */,
 				3E49374527FE29C300B15992 /* ArtistEntryView.swift */,
 				3E49374027FE29C300B15992 /* ArtistListView.swift */,
@@ -244,7 +241,6 @@
 				3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */,
 				3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */,
 				3EDD2C8527F8AEDF008629C1 /* ArtistHubApp.swift in Sources */,
-				3E49374C27FE29C300B15992 /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

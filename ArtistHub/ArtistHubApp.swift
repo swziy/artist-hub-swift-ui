@@ -26,7 +26,6 @@ struct ArtistHubApp: App {
 
     init() {
         NavigationBarAppearanceConfigurator().configure()
-        print(ArtistHubCore().text)
     }
 
     var body: some Scene {
