@@ -26,7 +26,7 @@ class NetworkClientTests: XCTestCase {
         cancellables = nil
     }
 
-    func test_whenPublisherReturnsError_shouldBeReported() {
+    func test_whenSessionReturnsError_shouldReportItDownstream() {
         // Given
         var completion: [Error] = []
         var values = [Artist]()
