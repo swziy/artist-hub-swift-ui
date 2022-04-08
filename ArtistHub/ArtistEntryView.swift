@@ -1,5 +1,6 @@
 import SwiftUI
 import ArtistHubUI
+import ArtistHubCore
 
 struct ArtistEntryView: View {
     let artist: Artist

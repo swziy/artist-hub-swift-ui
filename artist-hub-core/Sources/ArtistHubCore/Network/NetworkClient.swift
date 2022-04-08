@@ -8,7 +8,7 @@ public final class NetworkClient {
 
     public init(
         networkSession: NetworkSessionType,
-        scheduler: AnySchedulerOf<DispatchQueue>
+        scheduler: AnySchedulerOf<DispatchQueue> = .main
     ) {
         self.networkSession = networkSession
         self.scheduler = scheduler

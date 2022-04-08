@@ -1,6 +1,7 @@
 import ComposableArchitecture
 import SwiftUI
 import ArtistHubCore
+import Combine
 
 struct AppState: Equatable {
     var artists: [Artist] = []
@@ -23,6 +24,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
 
 @main
 struct ArtistHubApp: App {
+    let networkClient: NetworkClient = .init(networkSession: URLSession.shared)
 
     init() {
         NavigationBarAppearanceConfigurator().configure()

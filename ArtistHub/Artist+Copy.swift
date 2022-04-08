@@ -1,3 +1,5 @@
+import ArtistHubCore
+
 extension Artist {
 
     public func copy(isFavorite: Bool) -> Artist {
