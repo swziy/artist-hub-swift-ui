@@ -1,12 +1,17 @@
 import Combine
+import CombineSchedulers
 import Foundation
 
 public final class NetworkClient {
 
     // MARK: - Initialization
 
-    public init(networkSession: NetworkSessionType) {
+    public init(
+        networkSession: NetworkSessionType,
+        scheduler: AnySchedulerOf<DispatchQueue>
+    ) {
         self.networkSession = networkSession
+        self.scheduler = scheduler
     }
 
     public func request<R: Decodable>(for url: String) -> AnyPublisher<R, Error> {
@@ -25,10 +30,12 @@ public final class NetworkClient {
                 return element.data
             }
             .decode(type: R.self, decoder: JSONDecoder())
+            .receive(on: scheduler)
             .eraseToAnyPublisher()
     }
 
     // MARK: - Private
 
     private let networkSession: NetworkSessionType
+    private let scheduler: AnySchedulerOf<DispatchQueue>
 }
