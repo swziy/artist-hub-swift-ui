@@ -15,5 +15,9 @@ public extension UIImage {
         public static var heartFilled: UIImage {
             UIImage(named: "heart_filled")!
         }
+
+        public static var error: UIImage {
+            UIImage(named: "error")!
+        }
     }
 }

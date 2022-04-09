@@ -23,9 +23,6 @@ struct ArtistListView: View {
                     }
                 }
                 .listStyle(PlainListStyle())
-                .onAppear(perform: {
-                    viewStore.send(.appLoaded)
-                })
             }
             .navigationBarTitle("Artist Hub")
             .background(Color.Fill.lightGray)
