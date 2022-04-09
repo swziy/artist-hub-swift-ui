@@ -40,8 +40,11 @@ final class NetworkClient: NetworkClientType {
                 .eraseToAnyPublisher()
         }
 
+        let urlRequest = URLRequest(url: url)
+        print(urlRequest.curlString)
+
         return networkSession
-            .dataTaskPublisher(for: URLRequest(url: url))
+            .dataTaskPublisher(for: urlRequest)
             .tryMap() { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,
                       httpResponse.statusCode == 200 else {
