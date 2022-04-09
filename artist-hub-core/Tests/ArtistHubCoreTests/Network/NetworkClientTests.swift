@@ -279,6 +279,37 @@ class NetworkClientTests: XCTestCase {
             XCTFail("Wrong type")
         }
     }
+
+    func test_whenResponseIsEmpty_shouldReportSuccess() {
+        // Given
+        let dummyData = Data(capacity: 1)
+        var completion: [Error] = []
+        var valuesCount = 0
+        sut.request(for: "https://example.com")
+            .sink(receiveCompletion: {
+                switch $0 {
+                case .finished:
+                    break
+                case .failure(let error):
+                    completion.append(error)
+                }
+            }, receiveValue: { (value: Void) in
+                valuesCount += 1
+            })
+            .store(in: &cancellables)
+
+        // When
+        testScheduler.schedule(after: testScheduler.now.advanced(by: 1)) {
+            self.networkSessionSpy.stubbedResult?(.success((dummyData, HTTPURLResponse.ok)))
+        }
+
+        testScheduler.run()
+
+        // Then
+        XCTAssertEqual(networkSessionSpy.capturedRequest, [URLRequest(url: URL(string: "https://example.com")!)])
+        XCTAssertEqual(valuesCount, 1)
+        XCTAssertTrue(completion.isEmpty)
+    }
 }
 
 // MARK: - Helpers

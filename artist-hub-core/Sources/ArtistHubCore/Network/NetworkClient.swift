@@ -14,9 +14,29 @@ public final class NetworkClient {
         self.scheduler = scheduler
     }
 
-    public func request<R: Decodable>(for url: String) -> AnyPublisher<R, Error> {
+    // MARK: - Public API
+
+    public func request(for url: String) -> AnyPublisher<Void, Error> {
+        let dataPublisher: AnyPublisher<Data, Error> = request(for: url)
+        return dataPublisher
+            .map { _ in Void() }
+            .eraseToAnyPublisher()
+    }
+
+    public func request<R>(for url: String) -> AnyPublisher<R, Error> where R: Decodable {
+        request(for: url)
+            .decode(type: R.self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
+    }
+
+    // MARK: - Private
+
+    private let networkSession: NetworkSessionType
+    private let scheduler: AnySchedulerOf<DispatchQueue>
+
+    private func request(for url: String) -> AnyPublisher<Data, Error> {
         guard let url = URL(string: url) else {
-            return Fail<R, Error>(error: URLError(.badURL))
+            return Fail<Data, Error>(error: URLError(.badURL))
                 .eraseToAnyPublisher()
         }
 
@@ -29,13 +49,7 @@ public final class NetworkClient {
                       }
                 return element.data
             }
-            .decode(type: R.self, decoder: JSONDecoder())
             .receive(on: scheduler)
             .eraseToAnyPublisher()
     }
-
-    // MARK: - Private
-
-    private let networkSession: NetworkSessionType
-    private let scheduler: AnySchedulerOf<DispatchQueue>
 }
