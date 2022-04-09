@@ -15,11 +15,12 @@ struct ArtistEntryView: View {
                 Spacer(minLength: 8.0)
                 VStack(alignment: .leading) {
                     Text(artist.name)
-                        .lineLimit(1)
-                        .scaledToFit()
-                        .minimumScaleFactor(0.1)
-                        .foregroundColor(.black)
                         .font(Font.system(size: 16.0, weight: .bold))
+                        .scaledToFit()
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .foregroundColor(.black)
                     HStack {
                         Text(artist.username)
                             .foregroundColor(Color.Fill.gray)
