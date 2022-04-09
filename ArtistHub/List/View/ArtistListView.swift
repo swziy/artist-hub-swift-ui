@@ -6,26 +6,22 @@ struct ArtistListView: View {
     let store: Store<AppState, AppAction>
 
     var body: some View {
-        NavigationView {
-            WithViewStore(store) { viewStore in
-                List {
-                    ForEach(viewStore.artists) { artist in
-                        ArtistEntryView(artist: artist)
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.Fill.lightGray)
-                            .listRowInsets(
-                                .init(
-                                    top: 10.0,
-                                    leading: 12.0,
-                                    bottom: 10.0,
-                                    trailing: 12.0
-                                ))
-                    }
+        WithViewStore(store) { viewStore in
+            List {
+                ForEach(viewStore.artists) { artist in
+                    ArtistEntryView(artist: artist)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.Fill.lightGray)
+                        .listRowInsets(
+                            .init(
+                                top: 10.0,
+                                leading: 12.0,
+                                bottom: 10.0,
+                                trailing: 12.0
+                            ))
                 }
-                .listStyle(PlainListStyle())
             }
-            .navigationBarTitle("Artist Hub")
-            .background(Color.Fill.lightGray)
+            .listStyle(PlainListStyle())
         }
     }
 }
@@ -41,6 +37,7 @@ struct ArtistListView_Previews: PreviewProvider {
                 )
             )
         )
+            .background(Color.Fill.lightGray)
     }
 }
 

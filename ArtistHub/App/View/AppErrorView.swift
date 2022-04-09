@@ -7,27 +7,23 @@ struct AppErrorView: View {
     let store: Store<AppState, AppAction>
 
     var body: some View {
-        NavigationView {
-            HStack {
+        HStack {
+            Spacer()
+            VStack(spacing: 16.0) {
                 Spacer()
-                VStack(spacing: 16.0) {
-                    Spacer()
-                    WithViewStore(store) { viewStore in
-                        Image(uiImage: UIImage.Icons.error)
-                        Text("Something went wrong...")
-                            .foregroundColor(Color.Fill.gray)
-                            .font(Font.system(size: 14.0, weight: .regular))
-                        Button("Retry") {
-                            viewStore.send(.reload)
-                        }
-                        .buttonStyle(RetryButtonStyle())
+                WithViewStore(store) { viewStore in
+                    Image(uiImage: UIImage.Icons.error)
+                    Text("Something went wrong...")
+                        .foregroundColor(Color.Fill.gray)
+                        .font(Font.system(size: 14.0, weight: .regular))
+                    Button("Retry") {
+                        viewStore.send(.reload)
                     }
-                    Spacer()
+                    .buttonStyle(RetryButtonStyle())
                 }
                 Spacer()
             }
-            .navigationBarTitle("Artist Hub")
-            .background(Color.Fill.lightGray)
+            Spacer()
         }
     }
 }
