@@ -15,7 +15,9 @@ struct ArtistEntryView: View {
                 Spacer(minLength: 8.0)
                 VStack(alignment: .leading) {
                     Text(artist.name)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(1)
+                        .scaledToFit()
+                        .minimumScaleFactor(0.1)
                         .foregroundColor(.black)
                         .font(Font.system(size: 16.0, weight: .bold))
                     HStack {
