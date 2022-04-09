@@ -1,5 +1,6 @@
 import ComposableArchitecture
 import SwiftUI
+import ArtistHubCore
 
 struct ArtistListView: View {
     let store: Store<AppState, AppAction>
@@ -22,6 +23,9 @@ struct ArtistListView: View {
                     }
                 }
                 .listStyle(PlainListStyle())
+                .onAppear(perform: {
+                    viewStore.send(.appLoaded)
+                })
             }
             .navigationBarTitle("Artist Hub")
             .background(Color.Fill.lightGray)
@@ -35,7 +39,9 @@ struct ArtistListView_Previews: PreviewProvider {
             store: Store(
                 initialState: mockAppState,
                 reducer: appReducer,
-                environment: AppEnvironment()
+                environment: AppEnvironment(
+                    artistListService: ServiceFactory().makeArtistListService()
+                )
             )
         )
     }

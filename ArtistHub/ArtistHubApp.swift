@@ -9,22 +9,43 @@ struct AppState: Equatable {
 }
 
 enum AppAction {
-
+    case appLoaded
+    case artistListResponse(Result<[Artist], Error>)
 }
 
 struct AppEnvironment {
-
+    let artistListService: ArtistListServiceType
 }
 
 let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
     switch action {
-
+    case .appLoaded:
+        return environment
+            .artistListService
+            .getArtistList()
+            .catchToEffect(AppAction.artistListResponse)
+    case .artistListResponse(.failure):
+        state.artists = []
+        return .none
+    case let .artistListResponse(.success(artists)):
+        state.artists = artists
+        return .none
     }
 }
 
 @main
+struct AppLauncher {
+
+    static func main() throws {
+        if NSClassFromString("XCTestCase") == nil {
+            ArtistHubApp.main()
+        } else {
+            TestApp.main()
+        }
+    }
+}
+
 struct ArtistHubApp: App {
-    let networkClient: NetworkClient = .init(networkSession: URLSession.shared)
 
     init() {
         NavigationBarAppearanceConfigurator().configure()
@@ -34,11 +55,20 @@ struct ArtistHubApp: App {
         WindowGroup {
             ArtistListView(
                 store: Store(
-                    initialState: mockAppState,
+                    initialState: AppState(artists: []),
                     reducer: appReducer,
-                    environment: AppEnvironment()
+                    environment: AppEnvironment(
+                        artistListService: ServiceFactory().makeArtistListService()
+                    )
                 )
             )
         }
+    }
+}
+
+struct TestApp: App {
+
+    var body: some Scene {
+        WindowGroup { Text("Running Unit Tests") }
     }
 }

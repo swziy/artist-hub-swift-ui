@@ -2,11 +2,11 @@ import Combine
 import CombineSchedulers
 import Foundation
 
-public final class NetworkClient {
+final class NetworkClient: NetworkClientType {
 
     // MARK: - Initialization
 
-    public init(
+    init(
         networkSession: NetworkSessionType,
         scheduler: AnySchedulerOf<DispatchQueue> = .main
     ) {
@@ -16,14 +16,14 @@ public final class NetworkClient {
 
     // MARK: - Public API
 
-    public func request(for url: String) -> AnyPublisher<Void, Error> {
+    func request(for url: String) -> AnyPublisher<Void, Error> {
         let dataPublisher: AnyPublisher<Data, Error> = request(for: url)
         return dataPublisher
             .map { _ in Void() }
             .eraseToAnyPublisher()
     }
 
-    public func request<R>(for url: String) -> AnyPublisher<R, Error> where R: Decodable {
+    func request<R>(for url: String) -> AnyPublisher<R, Error> where R: Decodable {
         request(for: url)
             .decode(type: R.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
