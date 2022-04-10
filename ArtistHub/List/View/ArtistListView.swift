@@ -13,16 +13,18 @@ struct ArtistListView: View {
                     action: { ListAction.item(id: $0, action: $1) }
                 )
             ) { entryStore in
-                ArtistEntryView(store: entryStore)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.Fill.lightGray)
-                    .listRowInsets(
-                        .init(
-                            top: 10.0,
-                            leading: 12.0,
-                            bottom: 10.0,
-                            trailing: 12.0
-                        ))
+                WithViewStore(entryStore) { entryViewStore in
+                    ArtistEntryView(viewStore: entryViewStore)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.Fill.lightGray)
+                        .listRowInsets(
+                            .init(
+                                top: 10.0,
+                                leading: 12.0,
+                                bottom: 10.0,
+                                trailing: 12.0
+                            ))
+                }
             }
         }
         .listStyle(PlainListStyle())
