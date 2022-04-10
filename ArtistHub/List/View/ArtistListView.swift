@@ -6,27 +6,26 @@ struct ArtistListView: View {
     let store: Store<ListState, ListAction>
 
     var body: some View {
-        WithViewStore(store) { viewStore in
-            List {
-                ForEachStore(
-                    self.store.scope(
-                        state: { $0.artists },
-                        action: { ListAction.item(id: $0, action: $1) })
-                ) { entryStore in
-                    ArtistEntryView(store: entryStore)
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.Fill.lightGray)
-                        .listRowInsets(
-                            .init(
-                                top: 10.0,
-                                leading: 12.0,
-                                bottom: 10.0,
-                                trailing: 12.0
-                            ))
-                }
+        List {
+            ForEachStore(
+                self.store.scope(
+                    state: { $0.artists },
+                    action: { ListAction.item(id: $0, action: $1) }
+                )
+            ) { entryStore in
+                ArtistEntryView(store: entryStore)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.Fill.lightGray)
+                    .listRowInsets(
+                        .init(
+                            top: 10.0,
+                            leading: 12.0,
+                            bottom: 10.0,
+                            trailing: 12.0
+                        ))
             }
-            .listStyle(PlainListStyle())
         }
+        .listStyle(PlainListStyle())
     }
 }
 
@@ -39,7 +38,7 @@ struct ArtistListView_Previews: PreviewProvider {
                 environment: ListEnvironment()
             )
         )
-            .background(Color.Fill.lightGray)
+        .background(Color.Fill.lightGray)
     }
 }
 
