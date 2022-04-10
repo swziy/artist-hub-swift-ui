@@ -8,7 +8,12 @@ struct ArtistListView: View {
     var body: some View {
         List {
             WithViewStore(store.scope(state: \.currentTab)) { viewStore in
-                Picker("", selection: viewStore.binding(send: ListAction.select)) {
+                Picker(
+                    "",
+                    selection: viewStore
+                        .binding(send: ListAction.select)
+                        .animation(.default)
+                ) {
                     Text("All").tag(Tab.all)
                     Text("Favorite").tag(Tab.favorite)
                 }
