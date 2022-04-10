@@ -16,10 +16,7 @@ struct ArtistEntryView: View {
                 VStack(alignment: .leading) {
                     Text(artist.name)
                         .font(Font.system(size: 16.0, weight: .bold))
-                        .scaledToFit()
-                        .minimumScaleFactor(0.5)
-                        .lineLimit(1)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .resizableOneLine()
                         .foregroundColor(.black)
                     HStack {
                         Text(artist.username)
