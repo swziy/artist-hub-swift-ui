@@ -8,18 +8,12 @@ struct ArtistListView: View {
     var body: some View {
         List {
             WithViewStore(store.scope(state: \.currentTab)) { viewStore in
-                VStack {
-                    Spacer(minLength: 12.0)
-                    HStack {
-                        Spacer(minLength: 12.0)
-                        Picker("", selection: viewStore.binding(send: ListAction.select)) {
-                            Text("All").tag(Tab.all)
-                            Text("Favorite").tag(Tab.favorite)
-                        }.pickerStyle(.segmented)
-                        Spacer(minLength: 12.0)
-                    }
-                    Spacer(minLength: 12.0)
+                Picker("", selection: viewStore.binding(send: ListAction.select)) {
+                    Text("All").tag(Tab.all)
+                    Text("Favorite").tag(Tab.favorite)
                 }
+                .pickerStyle(.segmented)
+                .padding(12.0)
                 .background(Color.Fill.lightGray)
                 .listRowInsets(
                     .init(
