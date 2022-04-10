@@ -9,7 +9,7 @@ struct AppView: View {
         WithViewStore(store) { viewStore in
             NavigationView {
                 ZStack {
-                    switch viewStore.state.stage {
+                    switch viewStore.state {
                     case .loading:
                         AppLoadingView()
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.25)))

@@ -25,7 +25,7 @@ struct ArtistHubApp: App {
         WindowGroup {
             AppView(
                 store: Store(
-                    initialState: AppState(),
+                    initialState: AppState.loading,
                     reducer: appReducer,
                     environment: AppEnvironment(
                         artistListService: ServiceFactory().makeArtistListService()

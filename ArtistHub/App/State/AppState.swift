@@ -1,11 +1,7 @@
 import ArtistHubCore
 
-enum AppStage: Equatable {
+enum AppState: Equatable {
     case loading
     case success([Artist])
     case error
-}
-
-struct AppState: Equatable {
-    var stage: AppStage = .loading
 }
