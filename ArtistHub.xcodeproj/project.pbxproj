@@ -184,8 +184,8 @@
 		3EDD2C8327F8AEDF008629C1 /* ArtistHub */ = {
 			isa = PBXGroup;
 			children = (
-				3E8E7D7A2801EA8200C0956F /* List */,
 				3E8E7D6E2801E2EC00C0956F /* App */,
+				3E8E7D7A2801EA8200C0956F /* List */,
 				3EDD2C8827F8AEE0008629C1 /* Assets.xcassets */,
 			);
 			path = ArtistHub;
