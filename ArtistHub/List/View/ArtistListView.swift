@@ -3,7 +3,7 @@ import SwiftUI
 import ArtistHubCore
 
 struct ArtistListView: View {
-    let store: Store<AppState, AppAction>
+    let store: Store<ListState, ListAction>
 
     var body: some View {
         WithViewStore(store) { viewStore in
@@ -30,18 +30,16 @@ struct ArtistListView_Previews: PreviewProvider {
     static var previews: some View {
         ArtistListView(
             store: Store(
-                initialState: mockAppState,
-                reducer: appReducer,
-                environment: AppEnvironment(
-                    artistListService: ServiceFactory().makeArtistListService()
-                )
+                initialState: mockListState,
+                reducer: listReducer,
+                environment: ListEnvironment()
             )
         )
             .background(Color.Fill.lightGray)
     }
 }
 
-let mockAppState = AppState(artists: [
+let mockListState = ListState(artists: [
     .init(
         id: 0,
         avatar: "",

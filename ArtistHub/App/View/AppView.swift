@@ -16,9 +16,15 @@ struct AppView: View {
                     case .error:
                         AppErrorView(store: store)
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.25)))
-                    case .success:
-                        ArtistListView(store: store)
-                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.25)))
+                    case let .success(artists):
+                        ArtistListView(
+                            store: Store(
+                                initialState: ListState(artists: artists),
+                                reducer: listReducer,
+                                environment: ListEnvironment()
+                            )
+                        )
+                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.25)))
                     }
                 }
                 .navigationTitle("Artist Hub")

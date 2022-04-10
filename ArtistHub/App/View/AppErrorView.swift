@@ -43,7 +43,7 @@ private struct RetryButtonStyle: ButtonStyle {
 struct AppErrorView_Previews: PreviewProvider {
     static var previews: some View {
         AppErrorView(store: Store(
-            initialState: mockAppState,
+            initialState: AppState(stage: .error),
             reducer: appReducer,
             environment: AppEnvironment(
                 artistListService: ServiceFactory().makeArtistListService()

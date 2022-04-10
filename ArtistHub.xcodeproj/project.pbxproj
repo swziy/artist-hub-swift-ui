@@ -13,6 +13,10 @@
 		3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374527FE29C300B15992 /* ArtistEntryView.swift */; };
 		3E49375327FE2A0B00B15992 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3E49375227FE2A0B00B15992 /* ComposableArchitecture */; };
 		3E49375627FE2A1E00B15992 /* ArtistHubCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3E49375527FE2A1E00B15992 /* ArtistHubCore */; };
+		3E7D01EC2802DD55004F1FE5 /* ListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D01EB2802DD55004F1FE5 /* ListState.swift */; };
+		3E7D01EE2802DE57004F1FE5 /* ListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D01ED2802DE57004F1FE5 /* ListAction.swift */; };
+		3E7D01F02802DE88004F1FE5 /* ListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D01EF2802DE88004F1FE5 /* ListReducer.swift */; };
+		3E7D01F22802DF7D004F1FE5 /* ListEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7D01F12802DF7D004F1FE5 /* ListEnvironment.swift */; };
 		3E8E7D712801E30C00C0956F /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E7D702801E30C00C0956F /* AppView.swift */; };
 		3E8E7D732801E38700C0956F /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E7D722801E38700C0956F /* AppEnvironment.swift */; };
 		3E8E7D752801E3AC00C0956F /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E7D742801E3AC00C0956F /* AppAction.swift */; };
@@ -41,6 +45,10 @@
 		3E49374027FE29C300B15992 /* ArtistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceConfigurator.swift; sourceTree = "<group>"; };
 		3E49374527FE29C300B15992 /* ArtistEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistEntryView.swift; sourceTree = "<group>"; };
+		3E7D01EB2802DD55004F1FE5 /* ListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListState.swift; sourceTree = "<group>"; };
+		3E7D01ED2802DE57004F1FE5 /* ListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAction.swift; sourceTree = "<group>"; };
+		3E7D01EF2802DE88004F1FE5 /* ListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReducer.swift; sourceTree = "<group>"; };
+		3E7D01F12802DF7D004F1FE5 /* ListEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEnvironment.swift; sourceTree = "<group>"; };
 		3E8E7D702801E30C00C0956F /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3E8E7D722801E38700C0956F /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		3E8E7D742801E3AC00C0956F /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
@@ -83,6 +91,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3E7D01EA2802DD35004F1FE5 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				3E7D01EB2802DD55004F1FE5 /* ListState.swift */,
+				3E7D01ED2802DE57004F1FE5 /* ListAction.swift */,
+				3E7D01EF2802DE88004F1FE5 /* ListReducer.swift */,
+				3E7D01F12802DF7D004F1FE5 /* ListEnvironment.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		3E8E7D6E2801E2EC00C0956F /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +116,7 @@
 		3E8E7D7A2801EA8200C0956F /* List */ = {
 			isa = PBXGroup;
 			children = (
+				3E7D01EA2802DD35004F1FE5 /* State */,
 				3E8E7D7E2801EAEC00C0956F /* View */,
 			);
 			path = List;
@@ -290,13 +310,17 @@
 				3E8E7D802801EB1900C0956F /* AppLoadingView.swift in Sources */,
 				3E8E7D792801E7E900C0956F /* AppReducer.swift in Sources */,
 				3E8E7D772801E3DC00C0956F /* AppState.swift in Sources */,
+				3E7D01F02802DE88004F1FE5 /* ListReducer.swift in Sources */,
 				3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */,
 				3E8E7D752801E3AC00C0956F /* AppAction.swift in Sources */,
 				3E8E7D822801F0C000C0956F /* AppErrorView.swift in Sources */,
 				3E8E7D712801E30C00C0956F /* AppView.swift in Sources */,
+				3E7D01EE2802DE57004F1FE5 /* ListAction.swift in Sources */,
 				3E8E7D732801E38700C0956F /* AppEnvironment.swift in Sources */,
 				3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */,
 				3EDD2C8527F8AEDF008629C1 /* ArtistHubApp.swift in Sources */,
+				3E7D01EC2802DD55004F1FE5 /* ListState.swift in Sources */,
+				3E7D01F22802DF7D004F1FE5 /* ListEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
