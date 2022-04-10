@@ -1,12 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "heart_outline.pdf",
+      "filename" : "placeholder.pdf",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

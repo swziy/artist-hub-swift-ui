@@ -12,7 +12,7 @@ struct AppErrorView: View {
             VStack(spacing: 16.0) {
                 Spacer()
                 WithViewStore(store) { viewStore in
-                    Image(uiImage: UIImage.Icons.error)
+                    Image.Icons.error
                     Text("Something went wrong...")
                         .foregroundColor(Color.Fill.gray)
                         .font(Font.system(size: 14.0, weight: .regular))

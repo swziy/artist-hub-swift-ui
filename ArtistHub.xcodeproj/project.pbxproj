@@ -10,9 +10,7 @@
 		3E3089DC27FE2DF000035C50 /* ArtistHubUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3E3089DB27FE2DF000035C50 /* ArtistHubUI */; };
 		3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374027FE29C300B15992 /* ArtistListView.swift */; };
 		3E49374A27FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */; };
-		3E49374B27FE29C300B15992 /* Artist+Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374327FE29C300B15992 /* Artist+Copy.swift */; };
 		3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374527FE29C300B15992 /* ArtistEntryView.swift */; };
-		3E49374F27FE29C300B15992 /* UIImage+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374727FE29C300B15992 /* UIImage+Custom.swift */; };
 		3E49375327FE2A0B00B15992 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 3E49375227FE2A0B00B15992 /* ComposableArchitecture */; };
 		3E49375627FE2A1E00B15992 /* ArtistHubCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3E49375527FE2A1E00B15992 /* ArtistHubCore */; };
 		3E8E7D712801E30C00C0956F /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E7D702801E30C00C0956F /* AppView.swift */; };
@@ -43,9 +41,7 @@
 		3E3089DA27FE2C5300035C50 /* artist-hub-ui */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-ui"; sourceTree = "<group>"; };
 		3E49374027FE29C300B15992 /* ArtistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceConfigurator.swift; sourceTree = "<group>"; };
-		3E49374327FE29C300B15992 /* Artist+Copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Artist+Copy.swift"; sourceTree = "<group>"; };
 		3E49374527FE29C300B15992 /* ArtistEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistEntryView.swift; sourceTree = "<group>"; };
-		3E49374727FE29C300B15992 /* UIImage+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Custom.swift"; sourceTree = "<group>"; };
 		3E8E7D702801E30C00C0956F /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3E8E7D722801E38700C0956F /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		3E8E7D742801E3AC00C0956F /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
@@ -172,8 +168,6 @@
 			children = (
 				3E8E7D7A2801EA8200C0956F /* List */,
 				3E8E7D6E2801E2EC00C0956F /* App */,
-				3E49374327FE29C300B15992 /* Artist+Copy.swift */,
-				3E49374727FE29C300B15992 /* UIImage+Custom.swift */,
 				3EDD2C8827F8AEE0008629C1 /* Assets.xcassets */,
 				3EDD2C8A27F8AEE0008629C1 /* Preview Content */,
 			);
@@ -308,8 +302,6 @@
 				3E8E7D802801EB1900C0956F /* AppLoadingView.swift in Sources */,
 				3E8E7D792801E7E900C0956F /* AppReducer.swift in Sources */,
 				3E8E7D772801E3DC00C0956F /* AppState.swift in Sources */,
-				3E49374B27FE29C300B15992 /* Artist+Copy.swift in Sources */,
-				3E49374F27FE29C300B15992 /* UIImage+Custom.swift in Sources */,
 				3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */,
 				3E8E7D752801E3AC00C0956F /* AppAction.swift in Sources */,
 				3E8E7D822801F0C000C0956F /* AppErrorView.swift in Sources */,

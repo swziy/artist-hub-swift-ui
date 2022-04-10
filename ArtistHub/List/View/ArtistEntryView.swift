@@ -8,7 +8,7 @@ struct ArtistEntryView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12.0) {
             HStack {
-                Image(uiImage: UIImage.Icons.placeholder)
+                Image.Icons.placeholder
                     .resizable()
                     .frame(width: 36.0, height: 36.0)
                     .clipShape(Circle())
@@ -41,7 +41,7 @@ struct ArtistEntryView: View {
                     .font(Font.system(size: 12.0, weight: .light).italic())
                 Spacer()
                 Button(action: { }) {
-                    Image(uiImage: UIImage.Icons.heartFilled)
+                    Image.Icons.heartFilled
                 }
                 .buttonStyle(PlainButtonStyle())
             }
