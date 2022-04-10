@@ -8,10 +8,21 @@ struct ArtistEntryView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12.0) {
             HStack {
-                Image.Icons.placeholder
-                    .resizable()
-                    .frame(width: 36.0, height: 36.0)
-                    .clipShape(Circle())
+                AsyncImage(
+                    url: URL(string: artist.avatar),
+                    transaction: .init(animation: .easeInOut(duration: 0.25))
+                ) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    default:
+                        Image.Icons.placeholder.resizable()
+                    }
+                }
+                .frame(width: 36.0, height: 36.0)
+                .clipShape(Circle())
                 Spacer(minLength: 8.0)
                 VStack(alignment: .leading) {
                     Text(artist.name)
