@@ -19,7 +19,9 @@ struct AppView: View {
                     case let .success(artists):
                         ArtistListView(
                             store: Store(
-                                initialState: ListState(artists: IdentifiedArrayOf(uniqueElements: artists)),
+                                initialState: ListState(
+                                    artists: IdentifiedArrayOf(uniqueElements: artists)
+                                ),
                                 reducer: listReducer,
                                 environment: ListEnvironment()
                             )
