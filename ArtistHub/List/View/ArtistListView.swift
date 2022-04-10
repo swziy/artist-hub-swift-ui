@@ -6,15 +6,13 @@ struct ArtistListView: View {
     let store: Store<ListState, ListAction>
 
     var body: some View {
+
         List {
-            ForEachStore(
-                self.store.scope(
-                    state: { $0.artists },
-                    action: { ListAction.item(id: $0, action: $1) }
-                )
-            ) { entryStore in
-                WithViewStore(entryStore) { entryViewStore in
-                    ArtistEntryView(viewStore: entryViewStore)
+            Section {
+                ForEachStore(
+                    store.scope(state: \.artists, action: ListAction.item(id:action:))
+                ) { entryStore in
+                    ArtistEntryView(store: entryStore)
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.Fill.lightGray)
                         .listRowInsets(
@@ -24,6 +22,15 @@ struct ArtistListView: View {
                                 bottom: 10.0,
                                 trailing: 12.0
                             ))
+                }
+
+            } header: {
+                WithViewStore(store.scope(state: \.currentTab)) { viewStore in
+                    Picker("", selection: viewStore.binding(send: ListAction.select)) {
+                        Text("All").tag(Tab.all)
+                        Text("Favorite").tag(Tab.favorite)
+                    }
+                    .pickerStyle(.segmented)
                 }
             }
         }
@@ -44,7 +51,7 @@ struct ArtistListView_Previews: PreviewProvider {
     }
 }
 
-let mockListState = ListState(artists: [
+let mockListState = ListState(data: [
     .init(
         id: 0,
         avatar: "",
