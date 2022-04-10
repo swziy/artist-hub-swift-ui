@@ -6,32 +6,43 @@ struct ArtistListView: View {
     let store: Store<ListState, ListAction>
 
     var body: some View {
-
         List {
-            Section {
-                ForEachStore(
-                    store.scope(state: \.artists, action: ListAction.item(id:action:))
-                ) { entryStore in
-                    ArtistEntryView(store: entryStore)
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.Fill.lightGray)
-                        .listRowInsets(
-                            .init(
-                                top: 10.0,
-                                leading: 12.0,
-                                bottom: 10.0,
-                                trailing: 12.0
-                            ))
-                }
-
-            } header: {
-                WithViewStore(store.scope(state: \.currentTab)) { viewStore in
-                    Picker("", selection: viewStore.binding(send: ListAction.select)) {
-                        Text("All").tag(Tab.all)
-                        Text("Favorite").tag(Tab.favorite)
+            WithViewStore(store.scope(state: \.currentTab)) { viewStore in
+                VStack {
+                    Spacer(minLength: 12.0)
+                    HStack {
+                        Spacer(minLength: 12.0)
+                        Picker("", selection: viewStore.binding(send: ListAction.select)) {
+                            Text("All").tag(Tab.all)
+                            Text("Favorite").tag(Tab.favorite)
+                        }.pickerStyle(.segmented)
+                        Spacer(minLength: 12.0)
                     }
-                    .pickerStyle(.segmented)
+                    Spacer(minLength: 12.0)
                 }
+                .background(Color.Fill.lightGray)
+                .listRowInsets(
+                    .init(
+                        top: 0.0,
+                        leading: 0.0,
+                        bottom: 0.0,
+                        trailing: 0.0
+                    )
+                )
+            }
+            ForEachStore(
+                store.scope(state: \.artists, action: ListAction.item(id:action:))
+            ) { entryStore in
+                ArtistEntryView(store: entryStore)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.Fill.lightGray)
+                    .listRowInsets(
+                        .init(
+                            top: 10.0,
+                            leading: 12.0,
+                            bottom: 10.0,
+                            trailing: 12.0
+                        ))
             }
         }
         .listStyle(PlainListStyle())
