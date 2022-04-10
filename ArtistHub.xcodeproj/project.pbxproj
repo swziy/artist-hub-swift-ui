@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3E3089DC27FE2DF000035C50 /* ArtistHubUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3E3089DB27FE2DF000035C50 /* ArtistHubUI */; };
+		3E3211922803082100EC7C80 /* EntryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3211912803082100EC7C80 /* EntryAction.swift */; };
+		3E3211942803087C00EC7C80 /* EntryEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3211932803087C00EC7C80 /* EntryEnvironment.swift */; };
+		3E321196280308B100EC7C80 /* EntryState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E321195280308B100EC7C80 /* EntryState.swift */; };
+		3E321198280308E900EC7C80 /* EntryReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E321197280308E900EC7C80 /* EntryReducer.swift */; };
 		3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374027FE29C300B15992 /* ArtistListView.swift */; };
 		3E49374A27FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */; };
 		3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E49374527FE29C300B15992 /* ArtistEntryView.swift */; };
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		3E3089D927FE2B6200035C50 /* artist-hub-core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-core"; sourceTree = "<group>"; };
 		3E3089DA27FE2C5300035C50 /* artist-hub-ui */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-ui"; sourceTree = "<group>"; };
+		3E3211912803082100EC7C80 /* EntryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAction.swift; sourceTree = "<group>"; };
+		3E3211932803087C00EC7C80 /* EntryEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEnvironment.swift; sourceTree = "<group>"; };
+		3E321195280308B100EC7C80 /* EntryState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryState.swift; sourceTree = "<group>"; };
+		3E321197280308E900EC7C80 /* EntryReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryReducer.swift; sourceTree = "<group>"; };
 		3E49374027FE29C300B15992 /* ArtistListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		3E49374227FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAppearanceConfigurator.swift; sourceTree = "<group>"; };
 		3E49374527FE29C300B15992 /* ArtistEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistEntryView.swift; sourceTree = "<group>"; };
@@ -84,6 +92,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E32118E280307DE00EC7C80 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				3E32118F280307EF00EC7C80 /* State */,
+				3E321190280307F500EC7C80 /* View */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		3E32118F280307EF00EC7C80 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				3E3211912803082100EC7C80 /* EntryAction.swift */,
+				3E3211932803087C00EC7C80 /* EntryEnvironment.swift */,
+				3E321195280308B100EC7C80 /* EntryState.swift */,
+				3E321197280308E900EC7C80 /* EntryReducer.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		3E321190280307F500EC7C80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E49374527FE29C300B15992 /* ArtistEntryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3E49375427FE2A1E00B15992 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +190,6 @@
 		3E8E7D7E2801EAEC00C0956F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3E49374527FE29C300B15992 /* ArtistEntryView.swift */,
 				3E49374027FE29C300B15992 /* ArtistListView.swift */,
 			);
 			path = View;
@@ -186,6 +221,7 @@
 			children = (
 				3E8E7D6E2801E2EC00C0956F /* App */,
 				3E8E7D7A2801EA8200C0956F /* List */,
+				3E32118E280307DE00EC7C80 /* Entry */,
 				3EDD2C8827F8AEE0008629C1 /* Assets.xcassets */,
 			);
 			path = ArtistHub;
@@ -306,20 +342,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E321198280308E900EC7C80 /* EntryReducer.swift in Sources */,
 				3E49374A27FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift in Sources */,
 				3E8E7D802801EB1900C0956F /* AppLoadingView.swift in Sources */,
 				3E8E7D792801E7E900C0956F /* AppReducer.swift in Sources */,
 				3E8E7D772801E3DC00C0956F /* AppState.swift in Sources */,
 				3E7D01F02802DE88004F1FE5 /* ListReducer.swift in Sources */,
 				3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */,
+				3E321196280308B100EC7C80 /* EntryState.swift in Sources */,
 				3E8E7D752801E3AC00C0956F /* AppAction.swift in Sources */,
 				3E8E7D822801F0C000C0956F /* AppErrorView.swift in Sources */,
 				3E8E7D712801E30C00C0956F /* AppView.swift in Sources */,
 				3E7D01EE2802DE57004F1FE5 /* ListAction.swift in Sources */,
 				3E8E7D732801E38700C0956F /* AppEnvironment.swift in Sources */,
 				3E49374D27FE29C300B15992 /* ArtistEntryView.swift in Sources */,
+				3E3211922803082100EC7C80 /* EntryAction.swift in Sources */,
 				3EDD2C8527F8AEDF008629C1 /* ArtistHubApp.swift in Sources */,
 				3E7D01EC2802DD55004F1FE5 /* ListState.swift in Sources */,
+				3E3211942803087C00EC7C80 /* EntryEnvironment.swift in Sources */,
 				3E7D01F22802DF7D004F1FE5 /* ListEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

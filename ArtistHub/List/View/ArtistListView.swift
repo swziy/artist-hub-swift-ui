@@ -8,8 +8,12 @@ struct ArtistListView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             List {
-                ForEach(viewStore.artists) { artist in
-                    ArtistEntryView(artist: artist)
+                ForEachStore(
+                    self.store.scope(
+                        state: { $0.artists },
+                        action: { ListAction.item(id: $0, action: $1) })
+                ) { entryStore in
+                    ArtistEntryView(store: entryStore)
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.Fill.lightGray)
                         .listRowInsets(

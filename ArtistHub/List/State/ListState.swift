@@ -1,5 +1,6 @@
 import ArtistHubCore
+import ComposableArchitecture
 
 struct ListState: Equatable {
-    let artists: [Artist]
+    var artists: IdentifiedArrayOf<Artist>
 }

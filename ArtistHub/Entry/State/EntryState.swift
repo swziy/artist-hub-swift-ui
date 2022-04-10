@@ -1,0 +1,3 @@
+struct EntryState: Equatable {
+    
+}
