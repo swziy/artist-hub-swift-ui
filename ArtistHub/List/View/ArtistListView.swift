@@ -6,45 +6,38 @@ struct ArtistListView: View {
     let store: Store<ListState, ListAction>
 
     var body: some View {
-        List {
-            WithViewStore(store.scope(state: \.currentTab)) { viewStore in
-                Picker(
-                    "",
-                    selection: viewStore
-                        .binding(send: ListAction.select)
-                        .animation(.default)
-                ) {
-                    Text("All").tag(Tab.all)
-                    Text("Favorite").tag(Tab.favorite)
+        ScrollView {
+            LazyVStack { // workaround to get decent transition animation (cannot get the same effect with List ¯\_(ツ)_/¯).
+                WithViewStore(store.scope(state: \.currentTab)) { viewStore in
+                    Picker(
+                        "",
+                        selection: viewStore
+                            .binding(send: ListAction.select)
+                            .animation(.easeInOut(duration: 0.3))
+                    ) {
+                        Text("All").tag(Tab.all)
+                        Text("Favorite").tag(Tab.favorite)
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(12.0)
+                    .background(Color.Fill.lightGray)
                 }
-                .pickerStyle(.segmented)
-                .padding(12.0)
-                .background(Color.Fill.lightGray)
-                .listRowInsets(
-                    .init(
-                        top: 0.0,
-                        leading: 0.0,
-                        bottom: 0.0,
-                        trailing: 0.0
-                    )
-                )
-            }
-            ForEachStore(
-                store.scope(state: \.artists, action: ListAction.item(id:action:))
-            ) { entryStore in
-                ArtistEntryView(store: entryStore)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.Fill.lightGray)
-                    .listRowInsets(
-                        .init(
-                            top: 10.0,
-                            leading: 12.0,
-                            bottom: 10.0,
-                            trailing: 12.0
-                        ))
+                ForEachStore(
+                    store.scope(state: \.artists, action: ListAction.item(id:action:))
+                ) { entryStore in
+                    ArtistEntryView(store: entryStore)
+                        .transition(.opacity)
+                        .padding(
+                            .init(
+                                top: 5,
+                                leading: 12.0,
+                                bottom: 5,
+                                trailing: 12.0
+                            )
+                        )
+                }
             }
         }
-        .listStyle(PlainListStyle())
     }
 }
 
