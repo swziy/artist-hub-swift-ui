@@ -17,7 +17,7 @@ public struct Artist: Equatable, Hashable, Decodable, Identifiable {
     public let date: String
     public let description: String
     public let followers: String
-    public var isFavorite: Bool = false
+    public var isFavorite: Bool = false // TODO: change to let
 
     // MARK: - Initialization
 

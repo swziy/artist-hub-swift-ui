@@ -45,7 +45,7 @@ final class NetworkClient: NetworkClientType {
 
         return networkSession
             .dataTaskPublisher(for: urlRequest)
-            .tryMap() { element -> Data in
+            .tryMap { element -> Data in
                 guard let httpResponse = element.response as? HTTPURLResponse,
                       httpResponse.statusCode == 200 else {
                           throw URLError(.badServerResponse)

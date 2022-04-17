@@ -20,6 +20,9 @@ let package = Package(
             name: "ArtistHubCore",
             dependencies: [
                 .product(name: "CombineSchedulers", package: "combine-schedulers")
+            ],
+            resources: [
+                .process("Resources")
             ]),
         .testTarget(
             name: "ArtistHubCoreTests",
