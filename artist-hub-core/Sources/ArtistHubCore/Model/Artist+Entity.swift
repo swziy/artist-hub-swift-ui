@@ -16,4 +16,10 @@ extension Artist: EntityConvertibleType {
         request.sortDescriptors = [NSSortDescriptor(key: "artistId", ascending: true)]
         return request
     }
+
+    static func allStoredFetchRequest() -> NSFetchRequest<ArtistEntity> {
+        let request = NSFetchRequest<ArtistEntity>(entityName: "ArtistEntity")
+        request.sortDescriptors = [NSSortDescriptor(key: "artistId", ascending: true)]
+        return request
+    }
 }

@@ -46,7 +46,7 @@ struct AppErrorView_Previews: PreviewProvider {
             initialState: AppState.error,
             reducer: appReducer,
             environment: AppEnvironment(
-                artistListService: ServiceFactory().makeArtistListService()
+                artistListRepository: ArtistListRepositoryFactory().makeArtistListRepository()
             )
         ))
     }

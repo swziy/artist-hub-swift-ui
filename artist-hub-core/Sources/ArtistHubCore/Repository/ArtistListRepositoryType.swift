@@ -1,8 +1,5 @@
-//
-//  File.swift
-//  
-//
-//  Created by Szymon Witkowski on 16/04/2022.
-//
+import Combine
 
-import Foundation
+public protocol ArtistListRepositoryType {
+    func getArtistList() -> AnyPublisher<[Artist], Error>
+}

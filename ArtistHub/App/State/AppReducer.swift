@@ -5,7 +5,7 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
     case .reload:
         state = .loading
         return environment
-            .artistListService
+            .artistListRepository
             .getArtistList()
             .catchToEffect(AppAction.artistListResponse)
     case .artistListResponse(.failure):
@@ -15,4 +15,4 @@ let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, e
         state = .success(artists)
         return .none
     }
-}.debug()
+}

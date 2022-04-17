@@ -1,14 +1,14 @@
 import Foundation
 
-public struct ServiceFactory {
+struct ServiceFactory {
 
     // MARK: - Initialization
 
-    public init() {}
+    init() {}
 
     // MARK: - Public API
 
-    public func makeArtistListService() -> ArtistListServiceType {
+    func makeArtistListService() -> ArtistListServiceType {
         let session = URLSession.shared
         let client = NetworkClient(networkSession: session)
         return ArtistListService(networkClient: client)

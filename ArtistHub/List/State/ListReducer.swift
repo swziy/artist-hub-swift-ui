@@ -16,5 +16,5 @@ let listReducer = Reducer<ListState, ListAction, ListEnvironment>.combine(
             return .none
         }
     }
-).debug()
+)
 

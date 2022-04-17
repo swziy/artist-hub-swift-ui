@@ -1,5 +1,5 @@
 import Combine
 
-public protocol ArtistListServiceType {
+protocol ArtistListServiceType {
     func getArtistList() -> AnyPublisher<[Artist], Error>
 }
