@@ -21,7 +21,7 @@ struct AppView: View {
                             store: Store(
                                 initialState: ListState(data: IdentifiedArrayOf(uniqueElements: artists)),
                                 reducer: listReducer,
-                                environment: ListEnvironment()
+                                environment: ListEnvironment.default
                             )
                         )
                         .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.25)))

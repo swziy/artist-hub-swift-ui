@@ -5,7 +5,9 @@ enum Tab {
     case favorite
 }
 
-enum ListAction: Equatable {
+enum ListAction {
     case select(Tab)
     case item(id: Artist.ID, action: EntryAction)
+    case all(Result<[Artist], Error>)
+    case favorites(Result<[Artist], Error>)
 }

@@ -27,9 +27,7 @@ struct ArtistHubApp: App {
                 store: Store(
                     initialState: AppState.loading,
                     reducer: appReducer,
-                    environment: AppEnvironment(
-                        artistListService: ServiceFactory().makeArtistListService()
-                    )
+                    environment: AppEnvironment.default
                 )
             )
         }

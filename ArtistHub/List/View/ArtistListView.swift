@@ -13,7 +13,6 @@ struct ArtistListView: View {
                         "",
                         selection: viewStore
                             .binding(send: ListAction.select)
-                            .animation(.easeInOut(duration: 0.3))
                     ) {
                         Text("All").tag(Tab.all)
                         Text("Favorite").tag(Tab.favorite)
@@ -47,7 +46,7 @@ struct ArtistListView_Previews: PreviewProvider {
             store: Store(
                 initialState: mockListState,
                 reducer: listReducer,
-                environment: ListEnvironment()
+                environment: ListEnvironment.default
             )
         )
         .background(Color.Fill.lightGray)

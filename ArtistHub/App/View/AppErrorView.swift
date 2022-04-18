@@ -45,9 +45,7 @@ struct AppErrorView_Previews: PreviewProvider {
         AppErrorView(store: Store(
             initialState: AppState.error,
             reducer: appReducer,
-            environment: AppEnvironment(
-                artistListRepository: ArtistListRepositoryFactory().makeArtistListRepository()
-            )
+            environment: AppEnvironment.default
         ))
     }
 }

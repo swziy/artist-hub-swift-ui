@@ -16,8 +16,19 @@ final class ArtistListRepository: ArtistListRepositoryType {
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
 
-        let fetchedList = artistListService
-            .getArtistList()
+        let fetchedList: AnyPublisher<[Artist], Error>
+        if cache.isEmpty {
+            fetchedList = artistListService
+                .getArtistList()
+                .handleEvents(receiveOutput: { [weak self] in
+                    self?.cache = $0
+                })
+                .eraseToAnyPublisher()
+        } else {
+            fetchedList = Just(cache)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
+        }
 
         return fetchedList
             .combineLatest(storedList)
@@ -29,13 +40,21 @@ final class ArtistListRepository: ArtistListRepositoryType {
                     return artist
                 }
             })
+            .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
+    func getFavoritesList() -> AnyPublisher<[Artist], Error> {
+        getArtistList()
+            .map({ $0.filter { $0.isFavorite } })
             .eraseToAnyPublisher()
     }
 
     // MARK: - Private
 
     private var cache: [Artist] = []
+    private let mutex: NSLock = .init()
     private let artistListService: ArtistListServiceType
     private let persistenceClient: PersistenceClientType
 }
