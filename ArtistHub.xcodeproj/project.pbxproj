@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E25645E280DDF980043898C /* AppEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25645D280DDF980043898C /* AppEmptyView.swift */; };
 		3E3089DC27FE2DF000035C50 /* ArtistHubUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3E3089DB27FE2DF000035C50 /* ArtistHubUI */; };
 		3E3211922803082100EC7C80 /* EntryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3211912803082100EC7C80 /* EntryAction.swift */; };
 		3E3211942803087C00EC7C80 /* EntryEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3211932803087C00EC7C80 /* EntryEnvironment.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E25645D280DDF980043898C /* AppEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEmptyView.swift; sourceTree = "<group>"; };
 		3E3089D927FE2B6200035C50 /* artist-hub-core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-core"; sourceTree = "<group>"; };
 		3E3089DA27FE2C5300035C50 /* artist-hub-ui */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "artist-hub-ui"; sourceTree = "<group>"; };
 		3E3211912803082100EC7C80 /* EntryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAction.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				3E8E7D702801E30C00C0956F /* AppView.swift */,
 				3E8E7D7F2801EB1900C0956F /* AppLoadingView.swift */,
 				3E8E7D812801F0C000C0956F /* AppErrorView.swift */,
+				3E25645D280DDF980043898C /* AppEmptyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				3E49374A27FE29C300B15992 /* NavigationBarAppearanceConfigurator.swift in Sources */,
 				3E8E7D802801EB1900C0956F /* AppLoadingView.swift in Sources */,
 				3E8E7D792801E7E900C0956F /* AppReducer.swift in Sources */,
+				3E25645E280DDF980043898C /* AppEmptyView.swift in Sources */,
 				3E8E7D772801E3DC00C0956F /* AppState.swift in Sources */,
 				3E7D01F02802DE88004F1FE5 /* ListReducer.swift in Sources */,
 				3E49374827FE29C300B15992 /* ArtistListView.swift in Sources */,

@@ -21,19 +21,25 @@ struct ArtistListView: View {
                     .padding(12.0)
                     .background(Color.Fill.lightGray)
                 }
-                ForEachStore(
-                    store.scope(state: \.artists, action: ListAction.item(id:action:))
-                ) { entryStore in
-                    ArtistEntryView(store: entryStore)
-                        .transition(.opacity)
-                        .padding(
-                            .init(
-                                top: 5,
-                                leading: 12.0,
-                                bottom: 5,
-                                trailing: 12.0
-                            )
-                        )
+                WithViewStore(store.scope(state: \.artists)) { viewStore in
+                    if viewStore.state.isEmpty {
+                        AppEmptyView().padding()
+                    } else {
+                        ForEachStore(
+                            store.scope(state: \.artists, action: ListAction.item(id:action:))
+                        ) { entryStore in
+                            ArtistEntryView(store: entryStore)
+                                .transition(.opacity)
+                                .padding(
+                                    .init(
+                                        top: 5,
+                                        leading: 12.0,
+                                        bottom: 5,
+                                        trailing: 12.0
+                                    )
+                                )
+                        }
+                    }
                 }
             }
         }
