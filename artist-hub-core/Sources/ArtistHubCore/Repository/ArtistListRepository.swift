@@ -51,6 +51,15 @@ final class ArtistListRepository: ArtistListRepositoryType {
             .eraseToAnyPublisher()
     }
 
+    func save(artist: Artist) -> AnyPublisher<Void, Error> {
+        persistenceClient
+            .saveOrUpdate(object: artist)
+            .mapError { $0 as Error }
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
     // MARK: - Private
 
     private var cache: [Artist] = []

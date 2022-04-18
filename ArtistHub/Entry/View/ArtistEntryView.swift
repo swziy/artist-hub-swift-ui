@@ -89,7 +89,7 @@ struct ArtistEntryView_Previews: PreviewProvider {
                     isFavorite: false
                 ),
                 reducer: entryReducer,
-                environment: EntryEnvironment())
+                environment: EntryEnvironment.default)
         )
         .padding(12.0)
     }
